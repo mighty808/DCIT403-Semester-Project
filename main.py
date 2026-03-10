@@ -10,8 +10,11 @@ def show_menu():
   │  3. View Class Report           │
   │  4. View At-Risk Students       │
   │  5. Simulate Day                │
-  │  6. Exit                        │
-  └─────────────────────────────────┘""")
+  │  6. Predict At-Risk (AI)        │
+  │  7. Ask the Agent (NLP)         │
+  │  8. Exit                        │
+  └─────────────────────────────────┘
+  Or type a question in plain English.""")
 
 
 def main():
@@ -19,16 +22,18 @@ def main():
     agent = AttendanceAgent()
 
     print("=" * 50)
-    print("   ATTENDANCE TRACKER AGENT")
-    print("   DCIT 403 – Intelligent Agent Project")
+    print("   INTELLIGENT ATTENDANCE AGENT")
+    print("   DCIT 403 – Designing Intelligent Agents")
     print("=" * 50)
+    print("  Features: Belief Model · Trend Analysis ·")
+    print("  Prediction · Explanation · NLP · Proactive Alerts")
 
     while True:
         try:
             show_menu()
             choice = agent.perceive()
 
-            if choice == "6":
+            if choice == "8":
                 print("\n  Goodbye!\n")
                 break
 
