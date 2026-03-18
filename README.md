@@ -67,7 +67,7 @@ When you run `main.py`:
 1. Choose a course number (default is 1 for DCIT403 Intelligent Agent).
 2. Enter student ID (example: `S001`, or just `1` for `S001`).
 3. Enter student name (must match the selected course roster).
-4. Enter check-in time in `HH:MM` (24-hour) format, or leave blank to use current time.
+4. Check-in time is captured automatically using the current local time.
 5. Press Enter on an empty student ID to finish input.
 
 Then the system will:
