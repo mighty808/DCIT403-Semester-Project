@@ -156,7 +156,7 @@ class AttendanceAgent(Agent):
             msg.set_metadata("ontology", "attendance-system")
             msg.body = json.dumps(payload)
             await self.send(msg)
-            print("\n✅ AttendanceAgent: Records sent to NotificationAgent")
+            print("\n AttendanceAgent: Records sent to NotificationAgent")
 
             # Send the same results to ReportAgent for report generation.
             msg2 = Message(to=f"report_agent@{XMPP_SERVER}")
