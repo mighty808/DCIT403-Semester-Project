@@ -164,7 +164,7 @@ class AttendanceAgent(Agent):
             msg2.set_metadata("ontology", "attendance-system")
             msg2.body = json.dumps(payload)
             await self.send(msg2)
-            print("✅ AttendanceAgent: Records sent to ReportAgent")
+            print("AttendanceAgent: Records sent to ReportAgent")
 
             # Signal main.py that processing is complete.
             self.agent.process_complete.set()

@@ -87,7 +87,7 @@ class ReportAgent(Agent):
                     # Persist report history to text file.
                     with open("attendance_report.txt", "a") as f:
                         f.write(report + "\n")
-                    print("📁 ReportAgent: Report saved to attendance_report.txt")
+                    print(" ReportAgent: Report saved to attendance_report.txt")
 
                 except Exception as e:
                     # Log report generation failures for debugging.
