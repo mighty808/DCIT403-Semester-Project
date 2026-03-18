@@ -76,7 +76,7 @@ async def main():
     await asyncio.sleep(2)
     await attend.start(auto_register=False)
 
-    print("\n🚀 All agents running...\n")
+    print("\n All agents are running...\n")
 
     # Step 5: Wait until AttendanceAgent finishes processing all check-ins.
     await attend.process_complete.wait()
