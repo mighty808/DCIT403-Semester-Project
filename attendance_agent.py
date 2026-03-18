@@ -60,7 +60,7 @@ class AttendanceAgent(Agent):
             print(f"\n Course: {course_label}")
             print(f" Class starts at: {class_start} (late after +{LATE_THRESHOLD} mins)")
             print(" Enter check-ins (leave Student ID blank to finish):")
-            print("   Format: Student ID (as listed in roster), student name, time HH:MM AM/PM")
+            print("   Format: Student ID (as listed in roster), student name")
 
             # Loop until user finishes entering student records.
             while True:
@@ -94,19 +94,8 @@ class AttendanceAgent(Agent):
                     print(f"  ❌ Name does not match ID {sid}. Expected: {expected_name}")
                     continue
 
-                # Ask for check-in time (or auto-fill current time).
-                try:
-                    raw_time = (await asyncio.to_thread(input, "Check-in time (HH:MM AM/PM, blank = now): ")).strip()
-                except EOFError:
-                    raw_time = ""
-
-                checkin_time = (raw_time or datetime.now().strftime("%I:%M %p")).upper()
-                try:
-                    # Enforce strict time format so later calculations are safe.
-                    datetime.strptime(checkin_time, "%I:%M %p")
-                except ValueError:
-                    print("  ❌ Invalid time format. Use HH:MM AM/PM, e.g., 08:05 AM")
-                    continue
+                # Always stamp check-in with current local time.
+                checkin_time = datetime.now().strftime("%I:%M %p").upper()
 
                 # Save valid check-in for this student.
                 entered_checkins[sid] = checkin_time
