@@ -3,5 +3,6 @@
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.extraPaths": [
     "/usr/local/python/3.12.1/lib/python3.12/site-packages"
-  ]
+  ],
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }
